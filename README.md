@@ -2,10 +2,15 @@
 
 Not a completed project, but the main functionality exists.
 To see a local version running:
--Clone the repo and this branch
--Make sure the environment is as per the 'Using this project' section of these docs
--Install the dependencies with yarn
--Run `yarn run dev`
+
+1. Clone the repo and this branch
+
+2. Make sure the environment is as per the 'Using this project' section of these docs
+
+3. Install the dependencies with yarn
+
+4. Run `yarn run dev`
+
 
 # Using this project
 
