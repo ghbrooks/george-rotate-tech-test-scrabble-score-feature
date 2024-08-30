@@ -1,7 +1,7 @@
 // a function that takes a word as a parameter and returns the total scrabble score for that word
 function totalScrabbleScore(word) {
-    // Map of scrabble values
-const scrabbleScores = {
+  // Map of scrabble values
+  const scrabbleScores = {
     A: 1,
     E: 1,
     I: 1,
@@ -29,16 +29,14 @@ const scrabbleScores = {
     Q: 10,
     Z: 10,
   };
-return word
-    .split("")
-    .reduce((score, letter) => {
-        const uppercaseLetter = letter.toUpperCase();
-        if (scrabbleScores.hasOwnProperty(uppercaseLetter)) {
-            return score + scrabbleScores[uppercaseLetter];
-        } else {
-            return score;
-        }
-    }, 0);
+  return word.split("").reduce((score, letter) => {
+    const uppercaseLetter = letter.toUpperCase();
+    if (scrabbleScores.hasOwnProperty(uppercaseLetter)) {
+      return score + scrabbleScores[uppercaseLetter];
+    } else {
+      return score;
+    }
+  }, 0);
 }
 
-// console.log(totalScrabbleScore("cabbage")); // Output: 14
+module.exports = totalScrabbleScore;
