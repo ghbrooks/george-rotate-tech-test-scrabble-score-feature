@@ -28,9 +28,29 @@ code {
 main {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 80vh;
   width: 40vw;
   min-width: 200px;
   background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+main form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
