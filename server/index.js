@@ -16,9 +16,14 @@ app.get("/api/greeting", (req, res) => {
 
 app.get("/api/scrabble-score", (req, res) => {
   const word = req.query.word;
-  const score = totalScrabbleScore(word);
-  res.setHeader("Content-Type", "application/json");
-  res.send(JSON.stringify({ score: score }));
+  try {
+    const score = totalScrabbleScore(word);
+    res.setHeader("Content-Type", "application/json");
+    res.send(JSON.stringify({ score: score }));
+  } catch (error) {
+    res.setHeader("Content-Type", "application/json");
+    res.status(500).send(JSON.stringify({ error: "An error occurred while calculating the Scrabble score." }));
+  }
 });
 
 app.listen(3001, () =>

@@ -31,6 +31,9 @@ function totalScrabbleScore(word) {
   };
   return word.split("").reduce((score, letter) => {
     const uppercaseLetter = letter.toUpperCase();
+    if (!/[A-Z]/.test(uppercaseLetter)) {
+      throw new Error(`Invalid letter: ${uppercaseLetter}`);
+    }
     if (scrabbleScores.hasOwnProperty(uppercaseLetter)) {
       return score + scrabbleScores[uppercaseLetter];
     } else {
