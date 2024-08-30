@@ -73,8 +73,7 @@ Input: A JSON object containing the word.
 Output: A JSON object containing the computed score.
 ```json
 {
-  "score": 14
-}
+  "score": 18}
 ```
 
 Implementation Details:
