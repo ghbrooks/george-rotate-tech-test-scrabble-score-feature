@@ -13,9 +13,15 @@ class App extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch(
-      `http://localhost:3001/api/scrabble-score?word=${this.state.word}`
-    );
+    const response = await fetch("http://localhost:3001/api/scrabble-score", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        word: this.state.word,
+      }),
+    });
     const data = await response.json();
     this.setState({ score: data.score });
 
@@ -48,13 +54,13 @@ class App extends Component {
             <button type="submit">Submit</button>
           </form>
           {this.state.score && <p>Score: {this.state.score}</p>}
-          <ul>
+          <ol className="scrabbleScoresList">
             {this.state.submittedWords.map((word, index) => (
               <li key={index}>
-                Word: {word.word}, Score: {word.score}
+                '{word.word}' is {word.score}
               </li>
             ))}
-          </ul>
+          </ol>
         </main>
       </div>
     );

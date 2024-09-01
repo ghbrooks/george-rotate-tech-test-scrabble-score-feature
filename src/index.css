@@ -30,7 +30,7 @@ main {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
+  /* height: 80vh; */
   width: 40vw;
   min-width: 200px;
   background-color: white;
@@ -42,9 +42,14 @@ main {
 main form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
+  min-height: 100px;
+}
+
+main form > input {
+  outline: solid #04aa6d 1px;
 }
 
 main form label {
@@ -53,4 +58,19 @@ main form label {
   justify-content: center;
   align-items: center;
   text-align: center;
+  justify-content: space-between;
+  min-height: 50px;
+}
+
+main form button {
+  background-color: #04aa6d; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.scrabbleScoresList {
 }

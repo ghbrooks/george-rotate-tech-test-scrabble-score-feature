@@ -6,7 +6,7 @@ const totalScrabbleScore = require("./utils/scrabbleScoreLogic");
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(pino);
 
 app.get("/api/greeting", (req, res) => {
@@ -14,8 +14,8 @@ app.get("/api/greeting", (req, res) => {
   res.send(JSON.stringify({ greeting: `Hello World!` }));
 });
 
-app.get("/api/scrabble-score", (req, res) => {
-  const word = req.query.word;
+app.post("/api/scrabble-score", (req, res) => {
+  const word = req.body.word;
   try {
     const score = totalScrabbleScore(word);
     res.setHeader("Content-Type", "application/json");
